@@ -1,108 +1,73 @@
-title = "Harry.G Blog"
+baseURL = "https://example.com"
+languageCode = "en-us"
+defaultContentLanguage = "en"
+title = "Harry.G.的博客空间"
+theme = "hermit-v2"
+# enableGitInfo = true
+pygmentsCodefences  = true
+pygmentsUseClasses  = true
+# hasCJKLanguage = true  # If Chinese/Japanese/Korean is your main content language, enable this to make wordCount works right.
+rssLimit = 10  # Maximum number of items in the RSS feed.
+copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
+enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/functions/emojify/
+# googleAnalytics = "UA-123-45"
+# disqusShortname = "yourdiscussshortname"
 
-# This is what goes in <html lang="">
-languageCode = 'en-us'
-
-theme = "hugo-blog-awesome"
-
-# This defines how dates are formatted
-defaultContentLanguage = "en-gb"
-
-# To enable Google Analytics 4 (gtag.js) provide G-MEASUREMENT_ID below.
-# To disable Google Analytics, simply leave the field empty or remove the next line
-googleAnalytics = '' # G-MEASUREMENT_ID
-
-# Enable emojis globally
-enableEmoji = true
-ignoreErrors = ["additional-script-loading-error"] # ignore error of loading additional scripts.
-
-# To enable Disqus comments, provide Disqus Shortname below.
-# To disable Disqus comments, simply leave the field empty or remove the next line
-disqusShortname = ''
-
-# set markup.highlight.noClasses=false to enable code highlight
-[markup]
-  [markup.highlight]
-    noClasses = false
-  [markup.goldmark.renderer]
-    unsafe = true
-	[markup.tableOfContents]
-		startLevel = 2 # ToC starts from H2
-		endLevel = 4 # ToC ends at H4
-		ordered = false # generates <ul> instead of <ol>
-
-############################## English language ################################
-[Languages.en-gb]
-  languageName = "English"
-  languageCode = "en-gb"
-  contentDir = "content"
-  weight = 1
-
-  [Languages.en-gb.menu]
-  [[Languages.en-gb.menu.main]]
-    # The page reference (pageRef) is useful for menu highlighting
-    # When pageRef is set, setting `url` is optional; it will be used as a fallback if the page is not found.
-    pageRef="/"
-    name = 'Home'
-    url = '/blog/'
-    weight = 10
-  [[Languages.en-gb.menu.main]]
-    pageRef="posts"
-    name = 'Posts'
-    url = '/blog/posts/'
-    weight = 20
-  [[Languages.en-gb.menu.main]]
-    pageRef="about"
-    name = 'About'
-    url = '/blog/about/'
-    weight = 30
-
-[Languages.en-gb.params]
-  sitename = "Harry.G Blog"
-  # set color mode: dark, light, auto
-  defaultColor = "auto" 
-
-  description = "Harry.G. 个人博客"
-  mainSections = ['posts']
-  toc = true # set to false to disable table of contents 'globally'
-  tocOpen = false # set to true to open table of contents by default
-  goToTop = true # set to false to disable 'go to top' button
-  additionalScripts = ['js/custom.js', 'js/custom-2.js']
-  # Will try to load 'assets/js/custom.js' and 'assets/js/custom-2.js'.
-  # Your custom scripts will be concatinated to one file `custom.js`.
-  # When building for production it will be minified.
-  # The file `custom.js` is loaded on each page (before body tag ends).
-  dateFormat = "" # date format used to show dates on various pages. If nothing is specified, then "2 Jan 2006" format is used.
-  # See https://gohugo.io/functions/format/#hugo-date-and-time-templating-reference for available date formats.
-  rssFeedDescription = "summary" # available options: 1) summary 2) full
-  # summary - includes a short summary of the blog post in the RSS feed. Generated using Hugo .Summary .
-  # full - includes full blog post in the RSS feed. Generated using Hugo .Content .
-  # By default (or if nothing is specified), summary is used.
-
-[Languages.en-gb.params.author]
-  avatar = "avatar.jpg" # put the file in assets folder; also ensure that image has same height and width
-  # Note: image is not rendered if the resource(avatar image) is not found. No error is displayed.
-  intro = "Harry.G. Blog"
+[author]
   name = "Harry.G."
-  description = "我的日常博客"
 
-# Allow to override webmanifest options
-[Languages.en-gb.params.webmanifest]
-# will use "params.sitename" or "title" by default
-  name = "sitename" 
-  # same as name
-  short_name = "sitename" 
-  start_url = "/" # will use homepage url by default
-  theme_color = "#434648" # default is "#434648" (base color of text). Also will override html `<meta name="theme-color" />`
-  background_color = "#fff" # by default depend on "params.defaultColor" for "light" or "auto" will be set to "#fff" for dark will be "#131418" (color of dark mode background)
-  display = "standalone"
+[blackfriday]
+  # hrefTargetBlank = true
+  # noreferrerLinks = true
+  # nofollowLinks = true
 
-###################################################################
+[taxonomies]
+  tag = "tags"
+  # Categories are disabled by default.
 
-# Allow to override `browserconfig.xml` params (configuration for windows embeded browsers)
-[params.browserconfig]
-  TileColor = "#2d89ef" # default windows 10 blue tile color
+[params]
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04 -0700"
 
-[[params.socialIcons]]
-name = "github"
-url = "https://github.com/HarryG55"
+  # Metadata mostly used in document's head
+  # description = ""
+  # images = [""]
+  themeColor = "#494f5c"
+
+  homeSubtitle = "以恬静为务，以自得为功"
+  footerCopyright = ' &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+  # bgImg = ""  # Homepage background-image URL
+
+  # Prefix of link to the git commit detail page. GitInfo must be enabled.
+  # gitUrl = "https://github.com/username/repository/commit/"
+
+  # Toggling this option needs to rebuild SCSS, requires Hugo extended version
+  justifyContent = false  # Set "text-align: justify" to `.content`.
+
+  relatedPosts = false  # Add a related content section to all single posts page
+
+  code_copy_button = true # Turn on/off the code-copy-button for code-fields
+  
+  # Add custom css
+  # customCSS = ["css/foo.css", "css/bar.css"]
+
+  # Social Icons
+  # Check https://github.com/Track3/hermit#social-icons for more info.
+
+  [[params.social]]
+    name = "github"
+    url = "https://github.com/"
+
+[menu]
+
+  [[menu.main]]
+    name = "Posts"
+    url = "posts/"
+    weight = 10
+
+  [[menu.main]]
+    name = "About"
+    url = "about/"
+    weight = 20
